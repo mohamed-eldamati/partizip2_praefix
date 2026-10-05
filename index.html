@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Partizip II: Verben mit Präfix</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f3fa;--card:#fff;--ink:#1b1930;--mut:#6b6882;--pre:#d62855;--ge:#1f9d6a;--end:#e8a300;--sep:#5b3fd6;--non:#e0561f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121020;--card:#1e1b30;--ink:#f1eff9;--mut:#a29fba}}
+:root[data-theme="dark"]{--bg:#121020;--card:#1e1b30;--ink:#f1eff9;--mut:#a29fba}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'DM Sans',system-ui,sans-serif}
+h1,h2,h3,.big{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.15;margin:0}
+.w{max-width:820px;margin:0 auto;padding:0 18px}
+.prog{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--pre),var(--sep));width:0;z-index:9}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.hero h1{font-size:clamp(38px,9vw,72px);font-weight:800}
+.hero p{color:var(--mut);font-size:20px;margin:0;max-width:520px}
+.tag{display:inline-block;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--sep)}
+.hero .big{font-size:clamp(26px,6vw,44px);font-weight:800}
+.btn{align-self:flex-start;background:var(--ink);color:var(--bg);border:0;border-radius:30px;padding:12px 26px;font:600 17px 'DM Sans';cursor:pointer;text-decoration:none}
+sec,section{display:block;padding:64px 0}
+section h2{font-size:clamp(28px,6vw,42px);font-weight:800;margin-bottom:10px}
+.num{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sep);color:#fff;font-weight:800;margin-bottom:10px}
+.lead{color:var(--mut);margin:0 0 22px}
+.card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 2px 0 rgba(0,0,0,.05)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.pre{color:var(--pre)}.ge{color:var(--ge)}.en{color:var(--end)}.sep{color:var(--sep)}.non{color:var(--non)}
+b.pre,b.ge,b.en{font-weight:800}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:620px){.two{grid-template-columns:1fr}}
+.col{border-top:6px solid;border-radius:14px}.col.s{border-color:var(--sep)}.col.n{border-color:var(--non)}
+.col h3{font-size:24px;margin-bottom:6px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.pills span{border-radius:20px;padding:3px 14px;font-weight:600;background:rgba(127,127,160,.15)}
+.eq{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(20px,5vw,30px);margin:14px 0}
+.ex{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid rgba(127,127,160,.25);flex-wrap:wrap}
+.ex span:first-child{color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:22px;padding:5px 16px;font:600 16px 'DM Sans';cursor:pointer}
+.chip.sel{background:var(--ink);color:var(--bg)}
+.stage{min-height:150px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.parts{display:flex;gap:6px;flex-wrap:wrap;font:800 clamp(28px,8vw,48px) 'Bricolage Grotesque'}
+.parts i{font-style:normal;opacity:0;transform:translateY(14px) scale(.8);animation:pop .5s forwards}
+@keyframes pop{to{opacity:1;transform:none}}
+.cap{color:var(--mut);min-height:26px}
+.tree{display:grid;gap:12px}
+.node{padding:14px 18px;border-radius:14px;background:var(--card);font-weight:600}
+.node small{display:block;color:var(--mut);font-weight:400}
+.arrow{text-align:center;color:var(--mut);font-size:22px}
+.sent{font:800 clamp(20px,5vw,28px) 'Bricolage Grotesque';margin:8px 0}
+.q{font:800 clamp(30px,8vw,46px) 'Bricolage Grotesque';margin:6px 0 14px}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;background:var(--card);color:var(--ink);border:3px solid transparent;border-radius:14px;padding:13px 18px;font:600 19px 'DM Sans';cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ink)}.opt.ok{border-color:var(--ge)}.opt.no{border-color:var(--pre)}
+.fb{min-height:52px;margin-top:12px;font-weight:600}
+.next{display:none;margin-top:6px}
+footer{padding:40px 0 70px;color:var(--mut);text-align:center}
+</style></head><body><div class="prog" id="pg"></div><div class="w">
+
+<header class="hero"><span class="tag">Grammatik · Niveau A2</span>
+<h1>Partizip II<br>mit Präfix</h1>
+<p>Wann sagt man <b class="sep">an<span class="ge">ge</span>kommen</b> – und wann nur <b class="non">bezahlt</b>? Mit diesem Trick weißt du es immer.</p>
+<div class="big"><span class="pre">an</span><span class="ge">ge</span>kommen&nbsp;&nbsp;<span class="non">be</span>zahlt</div>
+<a class="btn" href="#s1">Los geht’s ↓</a></header>
+
+<section id="s1"><div class="rv"><span class="num">1</span><h2>Was ist ein Präfix?</h2>
+<p class="lead">Ein Präfix steht vor dem Verb. Es verändert die Bedeutung.</p></div>
+<div class="card rv"><div class="eq"><span class="pre">an</span> + kommen = <span class="pre">an</span>kommen</div>
+<div class="eq"><span class="pre">be</span> + zahlen = <span class="pre">be</span>zahlen</div>
+<p class="lead" style="margin:0">Es gibt <b class="sep">zwei Gruppen</b> von Präfixen. Das ist der ganze Trick.</p></div></section>
+
+<section id="s2"><div class="rv"><span class="num">2</span><h2>Zwei Gruppen</h2></div>
+<div class="two">
+<div class="card col s rv"><h3 class="sep">trennbar ✂️</h3>
+<p>Das Präfix geht im Satz weg.</p>
+<div class="pills"><span>ab-</span><span>an-</span><span>auf-</span><span>aus-</span><span>ein-</span><span>mit-</span><span>zu-</span><span>zurück-</span><span>…</span></div>
+<div class="sent">Ich <span class="pre">komme</span> um 8 Uhr <span class="pre">an</span>.</div></div>
+<div class="card col n rv"><h3 class="non">nicht trennbar 🔒</h3>
+<p>Das Präfix bleibt fest am Verb.</p>
+<div class="pills"><span>be-</span><span>emp(f)-</span><span>ent-</span><span>er-</span><span>ge-</span><span>ver-</span><span>zer-</span></div>
+<div class="sent">Ich <span class="pre">bezahle</span> die Rechnung.</div></div></div></section>
+
+<section id="s3"><div class="rv"><span class="num">3</span><h2>Trennbar: <span class="pre">Präfix</span> + <span class="ge">ge</span> + Verb</h2>
+<p class="lead">Das <b class="ge">ge</b> kommt in die Mitte – zwischen Präfix und Verb.</p></div>
+<div class="card rv"><div class="eq"><span class="pre">an</span> <span class="ge">ge</span> kommen → <span class="pre">an</span><span class="ge">ge</span>kommen</div>
+<div class="ex"><span>ankommen</span><span>ist <b class="pre">an</b><b class="ge">ge</b>kommen</span></div>
+<div class="ex"><span>umtauschen</span><span>hat <b class="pre">um</b><b class="ge">ge</b>tauscht</span></div>
+<div class="ex"><span>anziehen</span><span>hat <b class="pre">an</b><b class="ge">ge</b>zogen</span></div></div></section>
+
+<section id="s4"><div class="rv"><span class="num">4</span><h2>Nicht trennbar: <span class="pre">Präfix</span> + Verb</h2>
+<p class="lead">Kein <b class="ge">ge</b>! Das Präfix ersetzt es.</p></div>
+<div class="card rv"><div class="eq"><span class="pre">be</span> zahlt → <span class="pre">be</span>zahlt <span style="color:var(--pre)">✗ <s>bege</s>zahlt</span></div>
+<div class="ex"><span>bezahlen</span><span>hat <b class="pre">be</b>zahlt</span></div>
+<div class="ex"><span>empfehlen</span><span>hat <b class="pre">emp</b>fohlen</span></div>
+<div class="ex"><span>erzählen</span><span>hat <b class="pre">er</b>zählt</span></div></div></section>
+
+<section id="s5"><div class="rv"><span class="num">5</span><h2>Baukasten 🧩</h2>
+<p class="lead">Tippe auf ein Verb und sieh, wie das Partizip entsteht.</p></div>
+<div class="card rv"><div class="chips" id="chips"></div>
+<div class="stage"><div class="parts" id="parts"></div><div class="cap" id="cap"></div></div></div></section>
+
+<section id="s6"><div class="rv"><span class="num">6</span><h2>Dein Entscheidungsweg</h2></div>
+<div class="tree rv">
+<div class="node">Hat das Verb ein Präfix?<small>an-, auf-, be-, ver- …</small></div><div class="arrow">↓</div>
+<div class="node">Kommt das Präfix in der Liste <b class="sep">trennbar</b>?<small>ab, an, auf, aus, ein, mit, zu, zurück …</small></div><div class="arrow">↓</div>
+<div class="two"><div class="node" style="border-left:6px solid var(--sep)"><b class="sep">Ja</b> → <span class="pre">Präfix</span> + <span class="ge">ge</span> + Verb<small>aufstehen → aufgestanden</small></div>
+<div class="node" style="border-left:6px solid var(--non)"><b class="non">Nein</b> → <span class="pre">Präfix</span> + Verb<small>verstehen → verstanden</small></div></div>
+<div class="node" style="background:var(--sep);color:#fff">💡 Tipp: trennbar = Betonung vorne: <b>ÁN</b>kommen · nicht trennbar = Betonung auf dem Verb: be<b>ZÁH</b>len</div></div></section>
+
+<section id="s7"><div class="rv"><span class="num">7</span><h2>Quiz 🎯</h2></div>
+<div class="card rv"><div id="qh" style="color:var(--mut);font-weight:600"></div>
+<div class="q" id="qv"></div><div class="opts" id="qo"></div><div class="fb" id="fb"></div>
+<button class="btn next" id="nx">Weiter →</button></div></section>
+<footer>Partizip II · Verben mit Präfix</footer></div>
+
+<script>
+const $=id=>document.getElementById(id);
+addEventListener('scroll',()=>{const h=document.documentElement;$('pg').style.width=h.scrollTop/(h.scrollHeight-h.clientHeight)*100+'%'});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%3)*.12+'s';io.observe(e)});
+/* Baukasten: [verb, sep?, parts[[text,class]]] */
+const V=[["ankommen",1,[["an","pre"],["ge","ge"],["kommen","x"]]],["umtauschen",1,[["um","pre"],["ge","ge"],["tausch","x"],["t","en"]]],["anziehen",1,[["an","pre"],["ge","ge"],["zog","x"],["en","en"]]],["aufstehen",1,[["auf","pre"],["ge","ge"],["stand","x"],["en","en"]]],["einkaufen",1,[["ein","pre"],["ge","ge"],["kauf","x"],["t","en"]]],
+["bezahlen",0,[["be","pre"],["zahl","x"],["t","en"]]],["empfehlen",0,[["emp","pre"],["fohl","x"],["en","en"]]],["erzählen",0,[["er","pre"],["zähl","x"],["t","en"]]],["verstehen",0,[["ver","pre"],["stand","x"],["en","en"]]],["besuchen",0,[["be","pre"],["such","x"],["t","en"]]]];
+$('chips').innerHTML=V.map((v,i)=>`<button class="chip" data-i="${i}">${v[0]}</button>`).join('');
+function build(i){document.querySelectorAll('.chip').forEach((c,j)=>c.classList.toggle('sel',i===j));
+const v=V[i];$('parts').innerHTML=v[2].map((p,k)=>`<i class="${p[1]}" style="animation-delay:${k*.45}s">${p[0]}</i>`).join('');
+$('cap').textContent='';setTimeout(()=>{$('cap').innerHTML=v[1]?`trennbar ✂️ → <b class="pre">Präfix</b> + <b class="ge">ge</b> + Verb`:`nicht trennbar 🔒 → <b class="pre">Präfix</b> + Verb (kein ge)`},v[2].length*450)}
+$('chips').onclick=e=>{const c=e.target.closest('.chip');if(c)build(+c.dataset.i)};
+/* Quiz */
+const Z=[["aufstehen","aufgestanden","gestanden","aufstanden"],["verstehen","verstanden","geverstanden","verstehen"],["einkaufen","eingekauft","gekauft","einkauft"],["besuchen","besucht","gebesucht","besuchen"],["mitbringen","mitgebracht","mitbracht","gemitbracht"],["erzählen","erzählt","geerzählt","erzähl"],["ausmachen","ausgemacht","ausmacht","gemacht"],["vergessen","vergessen","gevergessen","vergesst"]];
+let qi=0,sc=0;
+function ask(){const z=Z[qi];$('qh').textContent=`Frage ${qi+1} / ${Z.length} · Punkte: ${sc}`;$('qv').textContent=z[0];$('fb').textContent='';$('nx').style.display='none';
+const o=z.slice(1).map((t,k)=>[t,k===0]).sort(()=>Math.random()-.5);
+$('qo').innerHTML=o.map(a=>`<button class="opt" data-c="${a[1]}">${a[0]}</button>`).join('')}
+$('qo').onclick=e=>{const b=e.target.closest('.opt');if(!b||b.disabled)return;
+const ok=b.dataset.c==='true';document.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.dataset.c==='true')x.classList.add('ok')});
+if(ok)sc++;else b.classList.add('no');
+$('fb').innerHTML=ok?'✅ Richtig!':'❌ Leider falsch. Richtig ist: <b>'+Z[qi][1]+'</b>';
+$('nx').textContent=qi===Z.length-1?'Ergebnis →':'Weiter →';$('nx').style.display='inline-block'};
+$('nx').onclick=()=>{qi++;if(qi>=Z.length){$('qh').textContent='';$('qv').textContent=`${sc} / ${Z.length} 🎉`;$('qo').innerHTML='';$('fb').innerHTML='<button class="btn" onclick="qi=0;sc=0;ask()">Noch einmal</button>';$('nx').style.display='none'}else ask()};
+ask();build(0);
+</script></body></html>
